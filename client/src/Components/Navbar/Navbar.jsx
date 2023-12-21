@@ -1,42 +1,72 @@
 import React from "react";
-import "./Navbar.css";
+import {
+  Toolbar,
+  Typography,
+  Box,
+  Button,
+  useScrollTrigger,
+  Slide,
+  AppBar,
+} from "@mui/material";
+import PersonIcon from "@mui/icons-material/Person";
 
-export const Navbar = () => {
+const navItems = ["Home", "About", "Contact"];
+
+const HideOnScroll = (props) => {
+  const { children, target } = props;
+  const trigger = useScrollTrigger({
+    target: target ? target() : undefined,
+    disableHysteresis: true,
+    threshold: 100, // Adjust this value to set when the navbar should appear
+  });
+
   return (
+    <Slide appear={false} direction="down" in={trigger}>
+      {children}
+    </Slide>
+  );
+};
 
-
-<nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-  <div className="container-fluid">
-    <a className="navbar-brand" href="/">AnkitBisen</a>
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse" id="navbarColor01">
-      <ul className="navbar-nav me-auto">
-        <li className="nav-item">
-          <a className="nav-link active" href="/">Home
-            <span className="visually-hidden">(current)</span>
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#about">About Me</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#contact">Contact Me</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#services">Services</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#portfolio">Portfolio</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-
-    );
+export const Navbar = (props) => {
+  return (
+    <HideOnScroll {...props}>
+      <AppBar>
+        <Toolbar
+          style={{
+            backgroundColor: "#fff",
+            color: "#212121",
+            display: "flex",
+            aligntItem: "center",
+            justifyContent: "space-around",
+            letterSpacing: "3px",
+          }}
+        >
+          <Box display="flex" flexDirection="row">
+            <PersonIcon
+              sx={{ fontSize: 40, marginRight: "10px" }}
+              fontWeight={700}
+            />
+            <Typography fontSize={20} marginTop={1} fontWeight={700}>
+              Ankit
+            </Typography>
+          </Box>
+          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+            {navItems.map((item) => (
+              <Button
+                key={item}
+                style={{ letterSpacing: "4px", fontWeight: "700" }}
+              >
+                {item}
+              </Button>
+            ))}
+          </Box>
+          <Box>
+            <Typography fontWeight={700}>Link</Typography>
+          </Box>
+        </Toolbar>
+      </AppBar>
+    </HideOnScroll>
+  );
 };
 
 export default Navbar;
