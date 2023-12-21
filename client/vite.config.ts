@@ -5,10 +5,6 @@ import react from "@vitejs/plugin-react-swc";
 export default defineConfig({
   base: "/",
   plugins: [react()],
-  esbuild: {
-    loader: "jsx",
-    include: ["src/**/*.js", "node_modules/**/*.js"],
-  },
   test: {
     globals: true,
     environment: "jsdom",
