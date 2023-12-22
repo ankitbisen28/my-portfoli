@@ -17,25 +17,59 @@ const StyledButton = styled(Button)({
 export const Banner = () => {
   return (
     <Box
-      height="100vh"
+      height={{ xs: "auto", md: "47rem" }}
       sx={{ backgroundColor: "#0BCEAF" }}
       display="flex"
-      flexDirection="row"
+      flexDirection="column"
       alignItems="center"
       justifyContent="center"
     >
-      <Grid width="80%" container spacing={2}>
-        <Grid item xs={6} height="50vh">
-          <Box display="flex" justifyContent="center" alignItems="center">
+      <Grid
+        container
+        spacing={2}
+        sx={{
+          width: "100%",
+          flexDirection: { xs: "column", md: "row" },
+          alignItems: {
+            xs: "center",
+          },
+        }}
+      >
+        <Grid item xs={12} md={6} height={{ xs: "auto", md: "50vh" }}>
+          <Box
+            display="flex"
+            sx={{
+              width: {
+                xs: "15rem",
+                sm: "20rem",
+                md: "25rem",
+              },
+              height: {
+                xs: "15rem",
+                sm: "20rem",
+                md: "25rem",
+              },
+              margin: "auto",
+            }}
+            justifyContent="center"
+            alignItems="center"
+            marginTop={{ xs: "4rem", md: "0" }}
+          >
             <img
-              style={{ width: "400px", height: "400px" }}
-              className="rounded-circle Profile-image"
+              style={{ minWidth: "100%", height: "100%" }}
+              className="rounded-circle"
               src="https://firebasestorage.googleapis.com/v0/b/my-portfolio-react-dc591.appspot.com/o/AnkitBisen.png?alt=media&token=228a3080-c19d-48db-9616-211803f1efae"
               alt="Ankit Bisen image"
             />
           </Box>
         </Grid>
-        <Grid item xs={6} height="50vh">
+        <Grid
+          item
+          xs={12}
+          md={6}
+          mt={{ md: 10 }}
+          height={{ xs: "auto", md: "50vh" }}
+        >
           <Typography variant="h4" color="#fff">
             I'm
           </Typography>
@@ -44,14 +78,18 @@ export const Banner = () => {
             sx={{
               textTransform: "uppercase",
               color: "transparent",
-              "-webkitTextStroke": "2px #fff",
+              "WebkitTextStroke": "2px #fff",
+              fontSize: {
+                xs: "3rem",
+                sm: "4rem",
+              },
             }}
           >
             Ankit Bisen
           </Typography>
           <TypeWriterEffect
             textStyle={{
-              fontFamily: "Poppins,sans-serif",
+              fontFamily: "Poppins, sans-serif",
               color: "#fff",
               fontWeight: 500,
               fontSize: "2.2em",
@@ -66,23 +104,51 @@ export const Banner = () => {
             multiTextDelay={1000}
             typeSpeed={150}
           />
-          <Box width="100%" sx={{ margin: "2rem 0 0 0" }} height="50%" display="flex" flexDirection="row" alignItems="center" justifyContent="flex-start">
+          <Box
+            width="100%"
+            sx={{
+              margin: "2rem 0 0 0",
+              display: "flex",
+              flexDirection: { xs: "column", sm: "row" },
+              alignItems: { xs: "center", md: "flex-start" },
+              justifyContent: "flex-start",
+            }}
+            height={{ xs: "auto", md: "50%" }}
+          >
             <StyledButton
               variant="outlined"
               size="large"
-              sx={{ margin: "2rem" }}
+              sx={{ margin: { xs: "1rem", md: "2rem" } }}
             >
               Download CV
             </StyledButton>
-            <PlayCircleIcon
-              style={{ color: "white", width: "5rem", height: "5rem" }}
-            />
-            <Typography variant="h6" fontWeight={500} color="white" padding={2}>Play Video</Typography>
+            <Box
+              display="flex"
+              flexDirection="row"
+              alignItems="center"
+              justifyContent="flex-start"
+              marginBottom={{ xs: "2rem" }}
+            >
+              <PlayCircleIcon
+                sx={{
+                  color: "white",
+                  width: { xs: "3rem", sm: "5rem" },
+                  height: { xs: "3rem", sm: "5rem" },
+                 }}
+              />
+              <Typography
+                variant="h6"
+                fontWeight={500}
+                color="white"
+                padding={2}
+              >
+                Play Video
+              </Typography>
+            </Box>
           </Box>
         </Grid>
       </Grid>
     </Box>
   );
 };
-
 export default Banner;

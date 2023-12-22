@@ -16,7 +16,7 @@
     "gh-pages": "^4.0.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "react-router-dom": "^6.3.0",
+    "react-router-dom": "^6.21.1",
     "react-typewriter-effect": "^1.1.0",
     "vite": "^5.0.9",
     "vite-plugin-svgr": "^4.2.0",

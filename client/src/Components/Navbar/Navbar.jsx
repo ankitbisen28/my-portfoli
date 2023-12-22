@@ -7,10 +7,14 @@ import {
   useScrollTrigger,
   Slide,
   AppBar,
+  useTheme,
+  useMediaQuery,
 } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
+import { NavDrawer } from "../NavDrawer/NavDrawer";
+import { Link } from "react-router-dom";
 
-const navItems = ["Home", "About", "Contact"];
+const navItems = ["Home", "About", "Contact", "Blogs"];
 
 const HideOnScroll = (props) => {
   const { children, target } = props;
@@ -28,6 +32,9 @@ const HideOnScroll = (props) => {
 };
 
 export const Navbar = (props) => {
+  const theme = useTheme();
+  const isMatch = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
     <HideOnScroll {...props}>
       <AppBar>
@@ -50,18 +57,42 @@ export const Navbar = (props) => {
               Ankit
             </Typography>
           </Box>
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {navItems.map((item) => (
-              <Button
-                key={item}
-                style={{ letterSpacing: "4px", fontWeight: "700" }}
-              >
-                {item}
-              </Button>
-            ))}
-          </Box>
-          <Box>
-            <Typography fontWeight={700}>Link</Typography>
+          {isMatch ? (
+            <Box marginLeft="auto">
+              <NavDrawer />
+            </Box>
+          ) : (
+            <Box sx={{ display: { xs: "none", md: "block" } }}>
+              {navItems.map((item) => (
+                <Link
+                  key={item}
+                  style={{
+                    letterSpacing: "4px",
+                    fontWeight: "600",
+                    textDecoration: "none",
+                    padding: "10px",
+                    color: "#212121",
+                  }}
+                  to={`/${item.toLowerCase()}`}
+                >
+                  {item}
+                </Link>
+              ))}
+            </Box>
+          )}
+
+          <Box sx={{ display: { xs: "none", md: "block" } }}>
+            <Link
+              to="/about"
+              style={{
+                textDecoration: "none",
+                color: "#212121",
+                fontWeight: "600",
+                letterSpacing: "4px",
+              }}
+            >
+              Link
+            </Link>
           </Box>
         </Toolbar>
       </AppBar>
