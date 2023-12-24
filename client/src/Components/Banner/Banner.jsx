@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography, Grid, styled, Button } from "@mui/material";
-import TypeWriterEffect from "react-typewriter-effect";
+import Typewriter from "typewriter-effect";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
 
 const StyledButton = styled(Button)({
@@ -78,7 +78,7 @@ export const Banner = () => {
             sx={{
               textTransform: "uppercase",
               color: "transparent",
-              "WebkitTextStroke": "2px #fff",
+              WebkitTextStroke: "2px #fff",
               fontSize: {
                 xs: "3rem",
                 sm: "4rem",
@@ -87,22 +87,19 @@ export const Banner = () => {
           >
             Ankit Bisen
           </Typography>
-          <TypeWriterEffect
-            textStyle={{
-              fontFamily: "Poppins, sans-serif",
-              color: "#fff",
-              fontWeight: 500,
-              fontSize: "2.2em",
+
+          <Typewriter
+            component="h3"
+            options={{
+              strings: [
+                "Frontend Developer",
+                "Backend Developer",
+                "Full Stack Developer",
+                "Make Awesome Web App ",
+              ],
+              autoStart: true,
+              loop: true,
             }}
-            startDelay={2000}
-            cursorColor="#3F3D56"
-            multiText={[
-              "Frontend Developer",
-              "Backend Developer",
-              "Full Stack Developer",
-            ]}
-            multiTextDelay={1000}
-            typeSpeed={150}
           />
           <Box
             width="100%"
@@ -134,7 +131,7 @@ export const Banner = () => {
                   color: "white",
                   width: { xs: "3rem", sm: "5rem" },
                   height: { xs: "3rem", sm: "5rem" },
-                 }}
+                }}
               />
               <Typography
                 variant="h6"
