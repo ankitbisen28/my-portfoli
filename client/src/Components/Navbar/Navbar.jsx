@@ -13,8 +13,9 @@ import {
 import PersonIcon from "@mui/icons-material/Person";
 import { NavDrawer } from "../NavDrawer/NavDrawer";
 import { Link } from "react-router-dom";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
-const navItems = ["Home", "About", "Contact", "Blogs"];
+const navItems = ["About", "Contact", "Blogs"];
 
 const HideOnScroll = (props) => {
   const { children, target } = props;
@@ -50,12 +51,22 @@ export const Navbar = (props) => {
         >
           <Box display="flex" flexDirection="row">
             <PersonIcon
-              sx={{ fontSize: 40, marginRight: "10px" }}
+              sx={{ fontSize: 40, marginRight: "5px" }}
               fontWeight={700}
             />
-            <Typography fontSize={20} marginTop={1} fontWeight={700}>
+            <Link
+              style={{
+                letterSpacing: "4px",
+                fontWeight: "600",
+                textDecoration: "none",
+                padding: "10px",
+                color: "#212121",
+                fontSize: "1.2rem",
+              }}
+              to="/"
+            >
               Ankit
-            </Typography>
+            </Link>
           </Box>
           {isMatch ? (
             <Box marginLeft="auto">
@@ -83,15 +94,13 @@ export const Navbar = (props) => {
 
           <Box sx={{ display: { xs: "none", md: "block" } }}>
             <Link
-              to="/about"
+              to="https://github.com/ankitbisen28"
+              target="_blank"
               style={{
-                textDecoration: "none",
-                color: "#212121",
-                fontWeight: "600",
-                letterSpacing: "4px",
+                color:"#212121"
               }}
             >
-              Link
+              <GitHubIcon />
             </Link>
           </Box>
         </Toolbar>
