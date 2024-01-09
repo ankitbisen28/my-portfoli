@@ -32,7 +32,7 @@ export const login = async (req: express.Request, res: express.Response) => {
 
     await user.save();
 
-    res.cookie("ANTONIO-AUTH", user.authentication.sessionToken, {
+    res.cookie("Ankit-Bisen", user.authentication.sessionToken, {
       domain: "localhost",
       path: "/",
     });

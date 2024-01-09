@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
+import cookieParser from 'cookie-parser';
 import dotenv from "dotenv";
 import cors from "cors";
 import router from "./routes";
@@ -10,12 +11,15 @@ const app = express();
 const PORT = process.env.PORT;
 
 app.use(bodyParser.json());
+app.use(cookieParser());
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
-app.use(cors({
-  credentials: true,
-}));
+app.use(
+  cors({
+    credentials: true,
+  })
+);
 
-// Define a route 
+// Define a route
 app.use("/", router());
 
 mongoose.set("strictQuery", true);
