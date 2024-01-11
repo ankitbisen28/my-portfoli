@@ -7,11 +7,11 @@
   "license": "MIT",
   "private": true,
   "workspaces": [
-    "server",
+    "portfolio",
     "client"
   ],
   "scripts": {
-    "start": "concurrently \"yarn workspace server start\" \"yarn workspace client start\""
+    "start": "concurrently \"yarn workspace portfolio run dev\" \"yarn workspace client start\""
   },
   "devDependencies": {
     "concurrently": "^8.2.2"
