@@ -18,7 +18,7 @@ export const Banner = () => {
   return (
     <Box
       height={{ xs: "auto", md: "47rem" }}
-      sx={{ backgroundColor: "#0BCEAF" }}
+      sx={{ backgroundColor: "#616161" }}
       display="flex"
       flexDirection="column"
       alignItems="center"
