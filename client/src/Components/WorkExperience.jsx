@@ -6,7 +6,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 export const WorkExperience = () => {
   return (
     <Box>
-      <Typography variant="h3" color="primary" fontWeight={600} mt={5}>
+      <Typography variant="h3" letterSpacing={4} color="primary" fontWeight={600} mt={5}>
         Work Experience
       </Typography>
       <Grid

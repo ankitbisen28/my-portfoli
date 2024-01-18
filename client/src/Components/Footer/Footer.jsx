@@ -4,7 +4,7 @@ export const Footer = () => {
   return (
     <div>
         {/* <!-- Footer Start --> */}
-    <div className="container-fluid bg-primary text-white mt-5 py-5 px-sm-3 px-md-5">
+    <div className="container-fluid bg-info text-white mt-5 py-5 px-sm-3 px-md-5">
         <div className="container text-center py-5">
             <div className="d-flex justify-content-center mb-4">
                 <a className="btn btn-light btn-social mx-2" rel="noreferre" href="https://www.instagram.com/ankybisen/"><i className="bi bi-instagram"></i></a>

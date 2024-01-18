@@ -8,7 +8,7 @@ export const EducationComponent = () => {
   return (
     <>
       <Box>
-        <Typography variant="h3" color="primary" fontWeight={600} mt={5}>
+        <Typography letterSpacing={4} variant="h3" color="primary" fontWeight={600} mt={5}>
           Education
         </Typography>
         {Education.map((item, index) => {

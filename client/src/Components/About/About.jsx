@@ -3,12 +3,19 @@ import { Portfolio } from "../Portfolio/Portfolio";
 import { Container, Typography } from "@mui/material";
 import { WorkExperience } from "../WorkExperience";
 import { EducationComponent } from "../EducationComponent";
+import { Technology } from "../Technology";
 
 export const About = () => {
   return (
     <>
       <Container>
-        <Typography variant="h3" color="primary" fontWeight={600} mt={5}>
+        <Typography
+          letterSpacing={4}
+          variant="h3"
+          color="primary"
+          fontWeight={600}
+          mt={5}
+        >
           About Me
         </Typography>
         <Typography variant="body1" width="60%" marginTop={4} color="primary">
@@ -21,6 +28,7 @@ export const About = () => {
           to impactful and cutting-edge projects in the ever-evolving field of
           web development
         </Typography>
+        <Technology />
         <WorkExperience />
         <EducationComponent />
         <Portfolio />

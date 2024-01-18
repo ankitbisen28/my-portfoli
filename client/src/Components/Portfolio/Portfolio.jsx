@@ -8,7 +8,13 @@ export const Portfolio = () => {
     <>
       <div id="portfolio" className="container">
         <div className="position-relative d-flex align-items-center justify-content-center">
-          <Typography variant="h2" color="primary" fontWeight={500} mt={4}>
+          <Typography
+            letterSpacing={4}
+            variant="h2"
+            color="primary"
+            fontWeight={500}
+            mt={4}
+          >
             My Portfolio
           </Typography>
         </div>

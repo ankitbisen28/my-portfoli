@@ -22,26 +22,26 @@ export const NavDrawer = () => {
         <List>
           <ListItemButton>
             <ListItemIcon>
-              <Link style={{ textDecoration: "none", color: "#4C4B16" }} to="/">
+              <Link style={{ textDecoration: "none", color: "#212121" }} to="/">
                 Home
               </Link>
             </ListItemIcon>
           </ListItemButton>
           <ListItemButton>
             <ListItemIcon>
-              <a
-                style={{ textDecoration: "none", color: "#4C4B16" }}
-                href="/"
+              <Link
+                style={{ textDecoration: "none", color: "#212121" }}
+                to="/about"
               >
                 About
-              </a>
+              </Link>
             </ListItemIcon>
           </ListItemButton>
           <ListItemButton>
             <ListItemIcon>
               <Link
-                style={{ textDecoration: "none", color: "#4C4B16" }}
-                to="/"
+                style={{ textDecoration: "none", color: "#212121" }}
+                to="/blog"
               >
                 Blogs
               </Link>
