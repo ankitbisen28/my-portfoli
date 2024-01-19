@@ -52,7 +52,7 @@ export const Contact = () => {
   return (
     <>
       {/* < <!-- Contact Start --> */}
-      <div className="container-fluid py-5" id="contact">
+      <div className="container-fluid py-5" style={{marginTop:"4rem"}} id="contact">
         <div className="container">
           <div className="position-relative d-flex align-items-center justify-content-center">
             <h1

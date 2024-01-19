@@ -1,9 +1,9 @@
 import React from "react";
-import { Portfolio } from "../Portfolio/Portfolio";
+import { Portfolio } from "../Components/Portfolio/Portfolio";
 import { Container, Typography } from "@mui/material";
-import { WorkExperience } from "../WorkExperience";
-import { EducationComponent } from "../EducationComponent";
-import { Technology } from "../Technology";
+import { WorkExperience } from "../Components/WorkExperience";
+import { EducationComponent } from "../Components/EducationComponent";
+import { Technology } from "../Components/Technology";
 
 export const About = () => {
   return (
@@ -14,11 +14,11 @@ export const About = () => {
           variant="h3"
           color="primary"
           fontWeight={600}
-          mt={5}
+          mt={13}
         >
           About Me
         </Typography>
-        <Typography variant="body1" width="60%" marginTop={4} color="primary">
+        <Typography variant="body1" width={{xs:"100%", md:"60%" }} marginTop={4} color="primary">
           I am a Full Stack Developer, with a keen focus on Node.js and
           React.js. Passionate about crafting seamless and innovative web
           solutions, I bring a fresh perspective to the world of technology. My

@@ -10,27 +10,29 @@ export const BlogComponent = () => {
           container
           spacing={2}
           alignItems="center"
+          // width= "32.375rem",
+          width= {{xs:"27.375rem", md:"32.375rem"}}
           sx={{
-            marginTop: "2rem",
-            width: "32.375rem",
-            height: "8.375rem",
+            margin: "1rem",
+            height: "10.375rem",
+            paddingBottom:"1rem",
             flexShrink: "0",
             border: "1px solid gray",
             borderRadius: "0.75rem",
           }}
         >
-          <Grid xs={4} alignItems="center">
+          <Grid item xs={4} alignItems="center">
             <img
               src="https://avatars.githubusercontent.com/u/89366625?s=400&u=ba546ac312ff5d9d94c7b872d13fcc8b2e5256f7&v=4"
               style={{
                 width: "122px",
                 height: "111px",
                 borderRadius: "10px",
-                marginLeft: "20px",
+                marginLeft: "10px",
               }}
             />
           </Grid>
-          <Grid xs={8}>
+          <Grid item xs={8}>
             <Box>
               <Typography
                 sx={{

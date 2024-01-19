@@ -11,7 +11,6 @@ export const Home = () => {
       <Container>
         <Technology />
       </Container>
-      <BlogComponent />
     </>
   );
 };

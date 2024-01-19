@@ -41,9 +41,9 @@ export const NavDrawer = () => {
             <ListItemIcon>
               <Link
                 style={{ textDecoration: "none", color: "#212121" }}
-                to="/blog"
+                to="/article"
               >
-                Blogs
+                Article
               </Link>
             </ListItemIcon>
           </ListItemButton>

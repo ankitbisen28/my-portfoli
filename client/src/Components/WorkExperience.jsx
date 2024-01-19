@@ -15,7 +15,7 @@ export const WorkExperience = () => {
         justifyContent="space-between"
         sx={{ backgroundColor: "gray", borderRadius: "15px" }}
         mt={5}
-        padding={5}
+        padding={{xs:3, md:5}}
       >
         <Grid item xs={6}>
           <Typography variant="h6" color="success" fontWeight={600}>

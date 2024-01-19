@@ -53,12 +53,12 @@ export const Banner = () => {
             }}
             justifyContent="center"
             alignItems="center"
-            marginTop={{ xs: "4rem", md: "0" }}
+            marginTop={{ xs: "6rem", md: "0" }}
           >
             <img
               style={{ minWidth: "100%", height: "100%" }}
               className="rounded-circle"
-              src="https://firebasestorage.googleapis.com/v0/b/my-portfolio-react-dc591.appspot.com/o/AnkitBisen.png?alt=media&token=228a3080-c19d-48db-9616-211803f1efae"
+              src="https://pbs.twimg.com/profile_images/1748338223800311808/vjzaYoQI_400x400.jpg"
               alt="Ankit Bisen image"
             />
           </Box>

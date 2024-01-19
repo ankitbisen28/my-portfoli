@@ -14,6 +14,7 @@ import { IoLogoElectron } from "react-icons/io5";
 import { SiMysql } from "react-icons/si";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { SiSqlite } from "react-icons/si";
+import { SiTypescript } from "react-icons/si";
 
 export const Technology = () => {
   return (
@@ -40,7 +41,7 @@ export const Technology = () => {
           margin="auto"
           flexWrap="wrap"
           borderRadius="20px"
-          padding={5}
+          padding={{xs:1, md:5}}
           backgroundColor="gray"
         >
           <FaHtml5 fontSize={100} color="orange" style={{ margin: "20px" }} />
@@ -54,7 +55,12 @@ export const Technology = () => {
             color="rgb(255, 255, 0)"
             style={{ margin: "20px" }}
           />
-          <SiMui fontSize={90} color="#3b82f680" style={{ margin: "20px" }} />
+          <SiTypescript
+            fontSize={80}
+            color="#007acc"
+            style={{ margin: "20px" }}
+          />
+          <SiMui fontSize={80} color="#3b82f680" style={{ margin: "20px" }} />
           <GrReactjs
             fontSize={100}
             color="rgb(0, 255, 255)"
