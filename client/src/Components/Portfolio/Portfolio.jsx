@@ -1,6 +1,6 @@
 import React from "react";
 import "./Portfolio.css";
-import { product } from "./data";
+import { product } from "../../Data/Projects";
 import { Typography } from "@mui/material";
 
 export const Portfolio = () => {

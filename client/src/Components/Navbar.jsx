@@ -1,7 +1,7 @@
 import React from "react";
 import { Toolbar, Box, AppBar, useTheme, useMediaQuery } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
-import { NavDrawer } from "../NavDrawer/NavDrawer";
+import { NavDrawer } from "./NavDrawer";
 import { Link } from "react-router-dom";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
