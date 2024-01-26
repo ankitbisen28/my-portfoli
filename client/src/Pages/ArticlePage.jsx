@@ -3,11 +3,10 @@ import React, { useEffect, useState } from "react";
 import { SearchComponent } from "../Components/SearchComponent";
 import { BlogComponent } from "../Components/BlogComponent";
 import client from "../sanityClient";
-// import { ImageUrlBuilder } from "@sanity/image-url/lib/types/builder";
 
 export const ArticlePage = () => {
   const [blogData, setBlogData] = useState([]);
-  console.log(blogData);
+  // console.log(blogData);
   useEffect(() => {
     // Fetch data from Sanity using your query
     const fetchData = async () => {

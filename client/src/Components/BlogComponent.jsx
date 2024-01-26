@@ -5,15 +5,20 @@ export const BlogComponent = ({ blogData }) => {
   return (
     <>
       {blogData.map((item, index) => {
-        console.log(item.imageUrl)
+        // console.log(item.imageUrl)
         return (
-          <Box display="flex" flexDirection="column" alignItems="center" key={index}>
+          <Box
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+            key={index}
+          >
             <Grid
               container
               spacing={2}
               alignItems="center"
               // width= "32.375rem",
-              width={{ xs: "27.375rem", md: "32.375rem" }}
+              width={{ xs: "20.375rem", sm: "27.375rem", md: "32.375rem" }}
               sx={{
                 margin: "1rem",
                 height: "10.375rem",
@@ -30,13 +35,13 @@ export const BlogComponent = ({ blogData }) => {
                     width: "122px",
                     height: "111px",
                     borderRadius: "10px",
-                    marginLeft: "10px",
                   }}
                 />
               </Grid>
               <Grid item xs={8}>
                 <Box>
                   <Typography
+                    margin={{ xs: "15px" }}
                     sx={{
                       width: "223px",
                       color: "#1C1C1C",
@@ -47,9 +52,10 @@ export const BlogComponent = ({ blogData }) => {
                       lineHeight: "normal",
                     }}
                   >
-                   {item.title}
+                    {item.title}
                   </Typography>
                   <Typography
+                    margin={{ xs: "15px" }}
                     sx={{
                       width: "223px",
                       fontFamily: "Inter",
@@ -60,12 +66,14 @@ export const BlogComponent = ({ blogData }) => {
                       fontWeight: "400",
                     }}
                   >
-                    {/* {props.title.length > 40 ? `${props.title.substring(0, 40)}...` : props.title} */}
-                   {item.description.length> 40 ? `${item.description.substring(0, 40)}...` : item.description}
+                    {item.description.length > 40
+                      ? `${item.description.substring(0, 40)}...`
+                      : item.description}
                   </Typography>
                   <Box
                     display="flex"
-                    mt={3}
+                    ml={{ xs: 3 }}
+                    mt={{ xs: 1, sm: 3 }}
                     flexDirection="row"
                     alignItems="center"
                   >
@@ -83,7 +91,11 @@ export const BlogComponent = ({ blogData }) => {
                     <Button
                       size="small"
                       variant="contained"
-                      sx={{ borderRadius: 5, marginLeft: 12, fontSize: 10 }}
+                      sx={{
+                        borderRadius: 5,
+                        marginLeft: {xs: 1, lg: 12 },
+                        fontSize: {xs:8, sm:10},
+                      }}
                     >
                       Read More
                     </Button>

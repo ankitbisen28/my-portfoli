@@ -41,6 +41,16 @@ export const NavDrawer = () => {
             <ListItemIcon>
               <Link
                 style={{ textDecoration: "none", color: "#212121" }}
+                to="/contact"
+              >
+                Contact
+              </Link>
+            </ListItemIcon>
+          </ListItemButton>
+          <ListItemButton>
+            <ListItemIcon>
+              <Link
+                style={{ textDecoration: "none", color: "#212121" }}
                 to="/article"
               >
                 Article

@@ -6,10 +6,8 @@ const SearchContainer = styled("div")({
   display: "flex",
   alignItems: "center",
   justifyContent: "flex-end",
-  marginLeft: "5rem",
-  width: "50%",
-  backgroundColor:"gray",
-  borderRadius:"20px"
+  backgroundColor: "gray",
+  borderRadius: "20px",
 });
 
 const SearchInput = styled(InputBase)(({ theme }) => ({
@@ -31,7 +29,7 @@ const SearchIconWrapper = styled("div")(({ theme }) => ({
 export const SearchComponent = () => {
   return (
     <>
-      <SearchContainer>
+      <SearchContainer width={{ xs: "100%", md: "80%" }}>
         <SearchInput
           placeholder="Search..."
           inputProps={{ "aria-label": "search" }}
