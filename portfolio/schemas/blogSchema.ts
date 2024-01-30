@@ -24,7 +24,7 @@ const sanityBlogSchema = {
     {
       name: 'description',
       title: 'Description',
-      type: 'text',
+      type: 'markdown',
       validation: (Rule: any) => Rule.required(),
     },
     {

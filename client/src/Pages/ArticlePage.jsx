@@ -1,34 +1,12 @@
 import { Container, Typography, Box } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { SearchComponent } from "../Components/SearchComponent";
 import { BlogComponent } from "../Components/BlogComponent";
-import client from "../sanityClient";
+import ArticleContext from "../context/Article";
 
 export const ArticlePage = () => {
-  const [blogData, setBlogData] = useState([]);
-  // console.log(blogData);
-  useEffect(() => {
-    // Fetch data from Sanity using your query
-    const fetchData = async () => {
-      try {
-        const response = await client.fetch(`
-        *[_type == "blog"] {
-          title,
-          description,
-          creationDate,
-          "imageUrl":images.asset->url,
-        }
-        `);
-
-        setBlogData(response);
-      } catch (error) {
-        console.error("Error fetching data from Sanity:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
+  const { blogData } = useContext(ArticleContext);
+  // console.log(blogData)
   return (
     <>
       <Container>

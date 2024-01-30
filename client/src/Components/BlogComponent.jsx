@@ -1,11 +1,17 @@
 import { Box, Grid, Typography, Avatar, Button } from "@mui/material";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export const BlogComponent = ({ blogData }) => {
+  const navigate = useNavigate();
+
+  const handleOnClick = (id) => {
+    navigate(`/article/${id}`);
+  };
+
   return (
     <>
       {blogData.map((item, index) => {
-        // console.log(item.imageUrl)
         return (
           <Box
             display="flex"
@@ -93,9 +99,10 @@ export const BlogComponent = ({ blogData }) => {
                       variant="contained"
                       sx={{
                         borderRadius: 5,
-                        marginLeft: {xs: 1, lg: 12 },
-                        fontSize: {xs:8, sm:10},
+                        marginLeft: { xs: 1, lg: 12 },
+                        fontSize: { xs: 8, sm: 10 },
                       }}
+                      onClick={() => handleOnClick(item._id)}
                     >
                       Read More
                     </Button>
