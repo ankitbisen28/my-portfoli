@@ -17,14 +17,20 @@ export const ArticlePage = () => {
           fontWeight={600}
           letterSpacing={3}
           padding={10}
+          textAlign="center"
         >
           Article
         </Typography>
         <Box display="flex" flexDirection="column" alignItems="center">
           <SearchComponent />
-          <Box marginTop={3} padding={2}>
-            <BlogComponent blogData={blogData} />
-          </Box>
+        </Box>
+        <Box
+          display="flex"
+          flexDirection="row"
+          alignItems="center"
+          flexWrap="wrap"
+        >
+          <BlogComponent blogData={blogData} />
         </Box>
       </Container>
     </>

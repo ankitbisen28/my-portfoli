@@ -1,6 +1,19 @@
-import { Box, Grid, Typography, Avatar, Button } from "@mui/material";
+import { Box, Link, Typography, styled, Button } from "@mui/material";
+import moment from "moment";
 import React from "react";
 import { useNavigate } from "react-router-dom";
+
+const ButtonStyled = styled(Button)({
+  width: "50%",
+  margin: "10px",
+  color: "#fff",
+  backgroundColor: "#212121",
+  borderRadius: "30px",
+  "&:hover": {
+    backgroundColor: "#fff",
+    color: "gray",
+  },
+});
 
 export const BlogComponent = ({ blogData }) => {
   const navigate = useNavigate();
@@ -11,105 +24,54 @@ export const BlogComponent = ({ blogData }) => {
 
   return (
     <>
-      {blogData.map((item, index) => {
+      {blogData.map((item) => {
+        console.log(item);
         return (
           <Box
-            display="flex"
-            flexDirection="column"
-            alignItems="center"
-            key={index}
+            sx={{ border: "1px solid gray", borderRadius: "15px" }}
+            margin={3}
+            alignItems={{ md: "center", lg: "center" }}
+            width={{ xs: "80%", sm: "40%", md: "25%", lg: "25%" }}
+            height={{ lg: "50vh" }}
+            key={item._id}
           >
-            <Grid
-              container
-              spacing={2}
-              alignItems="center"
-              // width= "32.375rem",
-              width={{ xs: "20.375rem", sm: "27.375rem", md: "32.375rem" }}
-              sx={{
-                margin: "1rem",
-                height: "10.375rem",
-                paddingBottom: "1rem",
-                flexShrink: "0",
-                border: "1px solid gray",
-                borderRadius: "0.75rem",
-              }}
+            <Box
+              component="img"
+              width="100%"
+              height={{ xs: 250, sm: 180, md: 190, lg: 200 }}
+              sx={{ borderRadius: "15px" }}
+              src={item.imageUrl}
+              alt="ankit bisen"
+            />
+            <Typography
+              padding={1}
+              color="primary"
+              style={{ fontSize: "10" }}
+              fontWeight={700}
             >
-              <Grid item xs={4} alignItems="center">
-                <img
-                  src={item.imageUrl}
-                  style={{
-                    width: "122px",
-                    height: "111px",
-                    borderRadius: "10px",
-                  }}
-                />
-              </Grid>
-              <Grid item xs={8}>
-                <Box>
-                  <Typography
-                    margin={{ xs: "15px" }}
-                    sx={{
-                      width: "223px",
-                      color: "#1C1C1C",
-                      fontFamily: "Inter",
-                      fontSize: "11px",
-                      fontStyle: "normal",
-                      fontWeight: "600",
-                      lineHeight: "normal",
-                    }}
-                  >
-                    {item.title}
-                  </Typography>
-                  <Typography
-                    margin={{ xs: "15px" }}
-                    sx={{
-                      width: "223px",
-                      fontFamily: "Inter",
-                      fontSize: "11px",
-                      fontStyle: "normal",
-                      lineHeight: "normal",
-                      color: "#424242",
-                      fontWeight: "400",
-                    }}
-                  >
-                    {item.description.length > 40
-                      ? `${item.description.substring(0, 40)}...`
-                      : item.description}
-                  </Typography>
-                  <Box
-                    display="flex"
-                    ml={{ xs: 3 }}
-                    mt={{ xs: 1, sm: 3 }}
-                    flexDirection="row"
-                    alignItems="center"
-                  >
-                    <Avatar
-                      sx={{ width: 30, height: 30 }}
-                      alt="Ankit Bisen"
-                      src="https://avatars.githubusercontent.com/u/89366625?s=400&u=ba546ac312ff5d9d94c7b872d13fcc8b2e5256f7&v=4"
-                    />
-                    <Typography
-                      color="primary"
-                      sx={{ fontSize: "11px", paddingLeft: "5px" }}
-                    >
-                      Ankit Bisen
-                    </Typography>
-                    <Button
-                      size="small"
-                      variant="contained"
-                      sx={{
-                        borderRadius: 5,
-                        marginLeft: { xs: 1, lg: 12 },
-                        fontSize: { xs: 8, sm: 10 },
-                      }}
-                      onClick={() => handleOnClick(item._id)}
-                    >
-                      Read More
-                    </Button>
-                  </Box>
-                </Box>
-              </Grid>
-            </Grid>
+              {item.title.length > 40
+                ? `${item.title.substring(0, 40)}...`
+                : item.title}
+            </Typography>
+            <Typography
+              padding={1}
+              color="primary"
+              variant="body2"
+              fontWeight={100}
+            >
+              {item.description.length > 60
+                ? `${item.description.substring(0, 60)}...`
+                : item.description}
+            </Typography>
+            <Box display="flex" flexDirection="row" alignItems="center">
+              <ButtonStyled onClick={() => handleOnClick(item._id)}>
+                Read more
+              </ButtonStyled>
+              <Typography>
+                {moment
+                  .parseZone(item.creationDate).startOf('minute').fromNow()}
+              </Typography>
+            </Box>
           </Box>
         );
       })}
