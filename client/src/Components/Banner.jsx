@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Typography, Grid, styled, Button } from "@mui/material";
 import Typewriter from "typewriter-effect";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
+import FileSaver from "file-saver";
 
 const StyledButton = styled(Button)({
   color: "white",
@@ -116,6 +117,7 @@ export const Banner = () => {
               variant="outlined"
               size="large"
               sx={{ margin: { xs: "1rem", md: "2rem" } }}
+              onClick={()=> FileSaver.saveAs("https://firebasestorage.googleapis.com/v0/b/my-portfolio-react-dc591.appspot.com/o/Full%20Stack%20Ankit.pdf?alt=media&token=b8361cc7-d07f-4500-a856-d07d3f107370", "ankitbisenresume.pdf")}
             >
               Download CV
             </StyledButton>
