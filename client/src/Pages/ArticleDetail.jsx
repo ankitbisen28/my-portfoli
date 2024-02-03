@@ -20,6 +20,7 @@ const cardStyle = {
 const mediaStyle = {
   height: 0,
   paddingTop: "56.25%", // 16:9
+  objectFit:{xs:"cover"}
 };
 
 export const ArticleDetail = () => {
@@ -40,7 +41,7 @@ export const ArticleDetail = () => {
       <Card style={cardStyle}>
         <CardHeader title={data.title} />
         <CardMedia
-          style={mediaStyle}
+          sx={mediaStyle}
           image={data.imageUrl}
           title={data.title}
         />
